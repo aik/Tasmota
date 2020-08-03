@@ -71,10 +71,20 @@ const float UVB_RESPONSIVITY[] PROGMEM =
 #define D_NAME_VEML6075 "VEML6075"
 #define D_UVA_INTENSITY "UVA intensity"
 #define D_UVB_INTENSITY "UVB intensity"
+#define D_UVA_INTENSITY_RAW "UVA raw"
+#define D_UVB_INTENSITY_RAW "UVB raw"
+#define D_COMP1_RAW "comp1"
+#define D_COMP2_RAW "comp2"
 
-const char HTTP_SNS_UVA[] PROGMEM = "{s}%s " D_UVA_INTENSITY "{m}%d " D_UNIT_WATT_METER_QUADRAT "{e}";
-const char HTTP_SNS_UVB[] PROGMEM = "{s}%s " D_UVB_INTENSITY "{m}%d " D_UNIT_WATT_METER_QUADRAT "{e}";
+const char HTTP_SNS_UVA[] PROGMEM = "{s}%s " D_UVA_INTENSITY "{m}%d " D_UNIT_MILLIWATT_METER_QUADRAT "{e}";
+const char HTTP_SNS_UVB[] PROGMEM = "{s}%s " D_UVB_INTENSITY "{m}%d " D_UNIT_MILLIWATT_METER_QUADRAT "{e}";
 const char HTTP_SNS_UVINDEX[] PROGMEM = "{s}%s " D_UV_INDEX "{m}%s {e}";
+
+const char HTTP_SNS_UVA_RAW[] PROGMEM = "{s}%s " D_UVA_INTENSITY_RAW "{m}%d {e}";
+const char HTTP_SNS_UVB_RAW[] PROGMEM = "{s}%s " D_UVB_INTENSITY_RAW "{m}%d {e}";
+const char HTTP_SNS_COMP1_RAW[] PROGMEM = "{s}%s " D_COMP1_RAW "{m}%d {e}";
+const char HTTP_SNS_COMP2_RAW[] PROGMEM = "{s}%s " D_COMP2_RAW "{m}%d {e}";
+
 const char JSON_SNS_VEML6075[] PROGMEM = ",\"%s\":{\"" D_JSON_UVA_INTENSITY "\":%d,\"" D_JSON_UVB_INTENSITY "\":%d,\"" D_JSON_UV_INDEX "\":%s}";
 const char S_JSON_VEML6075_COMMAND_NVALUE[] PROGMEM = "{\"" D_NAME_VEML6075 "\":{\"%s\":%d}}";
 
@@ -264,6 +274,11 @@ void VEML6075Show(bool json)
     WSContentSend_PD(HTTP_SNS_UVA, D_NAME_VEML6075, veml6075_sensor.uva);
     WSContentSend_PD(HTTP_SNS_UVB, D_NAME_VEML6075, veml6075_sensor.uvb);
     WSContentSend_PD(HTTP_SNS_UVINDEX, D_NAME_VEML6075 ,s_uvindex);
+
+    WSContentSend_PD(HTTP_SNS_UVA_RAW, D_NAME_VEML6075, veml6075_sensor.uva_raw);
+    WSContentSend_PD(HTTP_SNS_UVB_RAW, D_NAME_VEML6075, veml6075_sensor.uvb_raw);
+    WSContentSend_PD(HTTP_SNS_COMP1_RAW, D_NAME_VEML6075, veml6075_sensor.comp1);
+    WSContentSend_PD(HTTP_SNS_COMP2_RAW, D_NAME_VEML6075, veml6075_sensor.comp2);
 #endif // USE_WEBSERVER
   }
 }

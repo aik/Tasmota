@@ -745,7 +745,7 @@
 #define D_UNIT_VOLT "伏"
 #define D_UNIT_WATT "瓦"
 #define D_UNIT_WATTHOUR "瓦时"
-#define D_UNIT_WATT_METER_QUADRAT "瓦/平米"
+#define D_UNIT_MILLIWATT_METER_QUADRAT "mW/cm²"
 
 //SDM220, SDM120, LE01MR
 #define D_PHASE_ANGLE     "相位角"

@@ -745,7 +745,7 @@
 #define D_UNIT_VOLT "V"
 #define D_UNIT_WATT "W"
 #define D_UNIT_WATTHOUR "Wh"
-#define D_UNIT_WATT_METER_QUADRAT "W/m²"
+#define D_UNIT_MILLIWATT_METER_QUADRAT "mW/cm²"
 
 //SDM220, SDM120, LE01MR
 #define D_PHASE_ANGLE     "Angle de phase"

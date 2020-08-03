@@ -745,7 +745,7 @@
 #define D_UNIT_VOLT "В"
 #define D_UNIT_WATT "Вт"
 #define D_UNIT_WATTHOUR "ВтЧ"
-#define D_UNIT_WATT_METER_QUADRAT "W/m²"
+#define D_UNIT_MILLIWATT_METER_QUADRAT "мВт/см²"
 
 //SDM220, SDM120, LE01MR
 #define D_PHASE_ANGLE     "Угол фазы"

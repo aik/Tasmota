@@ -254,7 +254,7 @@ double Veml6070UvPower(double uvrisk)
 #endif  // USE_VEML6070_SHOW_RAW
   // different uv index level texts
   const char HTTP_SNS_UV_INDEX[] PROGMEM = "{s}VEML6070 " D_UV_INDEX "{m}%s %s{e}";
-  const char HTTP_SNS_UV_POWER[] PROGMEM = "{s}VEML6070 " D_UV_POWER "{m}%s " D_UNIT_WATT_METER_QUADRAT "{e}";
+  const char HTTP_SNS_UV_POWER[] PROGMEM = "{s}VEML6070 " D_UV_POWER "{m}%s " D_UNIT_MILLIWATT_METER_QUADRAT "{e}";
 #endif  // USE_WEBSERVER
 
 /********************************************************************************************/
